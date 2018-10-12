@@ -1,0 +1,41 @@
+#display{
+    width: 80%;
+    margin:30px auto;
+}
+
+.poke-img{
+    border: 2px solid black;
+    border-radius: 20px; 
+    width: 30%;
+    float:left;
+}
+
+.poke-img img{
+    width: 100%;
+}
+
+.poke-info{
+    font-size: 2em;
+    width: 40%;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+#desc{
+    width:80%;
+    margin-left: 100px;
+}
+
+h2{
+    margin:30px;
+}
+
+#evo-container{
+    margin-top:100px;
+}
+
+a{
+    font-size: 2em;
+    margin-left: 30px;
+}
+

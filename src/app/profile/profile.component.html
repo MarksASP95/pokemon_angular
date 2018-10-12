@@ -1,0 +1,49 @@
+<a routerLink="/">Home</a>
+
+<div id="display">
+  <div id="main-info">
+      <div class="poke-img">
+          <img [src]="pokemon.art_url" alt="poke_img">
+      </div>
+      
+      <div class="poke-info">
+        <p><strong>Name: </strong>{{pokemon.name}}</p>
+        <div id="types">
+          <ul *ngIf="hasSeveralTypes(pokemon.types); else oneType">
+            <strong>Types:</strong>
+            <li *ngFor="let type of pokemon.types">{{type}}</li>
+          </ul>
+          <ng-template #oneType>
+            <p><strong>Type: </strong>{{pokemon.types[0]}}</p>
+          </ng-template>
+        </div>
+        
+      </div> 
+      <p id="desc">{{pokemon.description}}</p>
+  </div>
+
+  <div class="container" id="evo-container" *ngIf="hasEvolution(pokemon.evolutions); else noEvolution">
+    <h2>Evolución</h2>
+    <div class="poke-img" *ngIf="hasEvoImg(pokemon.evolutions[0].to); else noEvoImg">
+        <img [src]="nextPokeImg" alt="poke_evo_img">
+    </div>  
+    <ng-template #noEvoImg>
+        <div class="poke-img">
+            <img src="../../assets/pokeball.png" alt="poke_evo_img">
+        </div>
+    </ng-template>
+    <div class="poke-info">
+        <p><strong>Nombre: </strong>{{pokemon.evolutions[0].to}}</p>
+        <p *ngIf="hasLevel(pokemon.evolutions[0])">
+            <strong>Nivel: </strong>{{pokemon.evolutions[0].level}}
+        </p>
+        <p><strong>Metodo: </strong>{{pokemon.evolutions[0].method}}</p>
+    </div>
+  </div>
+
+  <ng-template #noEvolution>
+    <strong>Este pokemon no tiene evolucion</strong>
+  </ng-template>
+  
+  
+</div>
