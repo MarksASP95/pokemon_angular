@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="art_url" alt="poke_img">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">Pokedex #{{pkdx_id}}</p>
+    <a (click)="saveLocalStorage(pokemon, nextPokemon)" routerLink="/profile" class="btn btn-primary">Ver</a>
+  </div>
+</div>
