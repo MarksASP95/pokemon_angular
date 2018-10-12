@@ -1,0 +1,9 @@
+<div id="display">
+  <app-card 
+    *ngFor="let pokemon of pokemons; let i = index;" 
+    [name]="pokemon.name" 
+    [pkdx_id]="pokemon.pkdx_id" 
+    [art_url]="pokemon.art_url"
+    [pokemon]="pokemon"
+    [nextPokemon]="pokemons[i+1]"></app-card>
+</div>
